@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "566229714425",
+    "firebase_url": "https://smartup-hr-test-frontend.firebaseio.com",
+    "project_id": "smartup-hr-test-frontend",
+    "storage_bucket": "smartup-hr-test-frontend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566229714425:android:6530af47df4b4ebe",
+        "android_client_info": {
+          "package_name": "com.smartup.hr.canditate_test_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566229714425-fhri81qtgpid28ve4afmn7qbj4f4r4n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJNNlhqww3R-7kn9IqL86Clko-G1Vuha0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
