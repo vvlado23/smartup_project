@@ -5,6 +5,7 @@ class Item extends ChangeNotifier {
   final String? description;
   final String title;
   final String? imagePath;
+  final String? imageUrl;
   final List<String> ingredients;
   final List<String> instructions;
   final String? webUrl;
@@ -15,6 +16,7 @@ class Item extends ChangeNotifier {
       this.description,
       required this.title,
       this.imagePath,
+      this.imageUrl,
       required this.ingredients,
       required this.instructions,
       this.webUrl,
@@ -25,6 +27,7 @@ class Item extends ChangeNotifier {
     this.description = " ",
     this.title = " ",
     this.imagePath = " ",
+    this.imageUrl = " ",
     this.ingredients = const [" "],
     this.instructions = const [" "],
     this.webUrl = " ",

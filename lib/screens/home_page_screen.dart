@@ -34,6 +34,8 @@ class HomePageScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return FoodListViewWidget(
               item: items[index],
+              index: index,
+              path: menuPath,
             );
           },
         ));

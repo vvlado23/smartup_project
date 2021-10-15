@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 import '../providers/item.dart';
 
@@ -7,8 +8,8 @@ FirebaseDatabase database = FirebaseDatabase.instance;
 
 class DatabaseCalls {
   DatabaseCalls(this.context);
+
   BuildContext context;
-  //Map<String, List<Item>> resultMap = {};
 
   Future<String> getTitle(int menuNumber) async {
     DatabaseReference _ref = database
@@ -45,6 +46,16 @@ class DatabaseCalls {
     return itemMap;
   }
 
+  Future<String?> getImage(String? path) async {
+    if (path == null) {
+      return null;
+    }
+    FirebaseStorage storage = FirebaseStorage.instance;
+    Reference _ref = storage.ref(path);
+
+    return _ref.getDownloadURL();
+  }
+
   Future<Item> getItemVars(String key) async {
     Item item;
     //database calls
@@ -61,11 +72,14 @@ class DatabaseCalls {
     _ref = database.reference().child('item_external_links/youtube_urls/$key');
     var resultYt = await _ref.once().then((value) => value.value);
 
+    var image = await getImage(resultSummary["image_path"]);
+
     item = Item(
         itemKey: key,
         title: resultSummary["title"],
         description: resultSummary["description"],
         imagePath: resultSummary["image_path"],
+        imageUrl: image,
         ingredients: resultContent["ingredients"].cast<String>(),
         instructions: resultContent["instructions"].cast<String>(),
         webUrl: resultweb,
