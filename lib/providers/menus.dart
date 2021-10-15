@@ -31,8 +31,8 @@ class Menus extends ChangeNotifier {
   //stores menu names and paths from database to provider variables
   Future<void> setMenusList() async {
     for (int i = 1; i < 4; i++) {
-      _menusList.add(await DatabaseCalls(context).getTitle(i));
-      _menusPathsList.add(await DatabaseCalls(context).getContentKeyPaths(i));
+      _menusList.add(await DatabaseCalls().getTitle(i));
+      _menusPathsList.add(await DatabaseCalls().getContentKeyPaths(i));
     }
 
     notifyListeners();
@@ -43,7 +43,7 @@ class Menus extends ChangeNotifier {
     if (_menuAndItemsList.containsKey(path)) {
       return;
     }
-    _menuAndItemsList[path] = await DatabaseCalls(context).getItemMap(path);
+    _menuAndItemsList[path] = await DatabaseCalls().getItemMap(path);
     notifyListeners();
   }
 }

@@ -13,7 +13,6 @@ class Login {
   Login.out({this.mail = " ", this.pass = " "});
 
   Future<bool> doLoginWithToken() async {
-    print("token login");
     try {
       await auth.signInWithCustomToken(auth.currentUser!.uid);
       isLoggedIn = true;
@@ -24,7 +23,6 @@ class Login {
   }
 
   Future<bool> doLogin() async {
-    print("main login");
     try {
       await auth.signInWithEmailAndPassword(
         email: mail,
@@ -41,7 +39,6 @@ class Login {
     try {
       await auth.signOut();
       isLoggedIn = false;
-      print(auth.currentUser?.uid);
     } on FirebaseAuthException catch (e) {
       return;
     }

@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Login login = Login(mail: _mail, pass: _pass);
     if (await login.doLogin()) {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const MenuOptionsScreen()));
+          MaterialPageRoute(builder: (context) => MenuOptionsScreen()));
     } else {}
   }
 

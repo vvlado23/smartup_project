@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
 
 Widget setFirstScreen(BuildContext context) {
   if (auth.currentUser?.uid != null) {
-    return const MenuOptionsScreen();
+    return MenuOptionsScreen();
   } else {
     return const LoginScreen();
   }

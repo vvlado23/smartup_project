@@ -29,7 +29,7 @@ class HomePageScreen extends StatelessWidget {
           //backgroundColor: Colors.black45,
         ),
         body: ListView.builder(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           itemCount: items!.length,
           itemBuilder: (context, index) {
             return FoodListViewWidget(

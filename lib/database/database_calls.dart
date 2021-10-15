@@ -7,9 +7,7 @@ import '../providers/item.dart';
 FirebaseDatabase database = FirebaseDatabase.instance;
 
 class DatabaseCalls {
-  DatabaseCalls(this.context);
-
-  BuildContext context;
+  DatabaseCalls();
 
   Future<String> getTitle(int menuNumber) async {
     DatabaseReference _ref = database
@@ -75,15 +73,16 @@ class DatabaseCalls {
     var image = await getImage(resultSummary["image_path"]);
 
     item = Item(
-        itemKey: key,
-        title: resultSummary["title"],
-        description: resultSummary["description"],
-        imagePath: resultSummary["image_path"],
-        imageUrl: image,
-        ingredients: resultContent["ingredients"].cast<String>(),
-        instructions: resultContent["instructions"].cast<String>(),
-        webUrl: resultweb,
-        ytUrl: resultYt);
+      itemKey: key,
+      title: resultSummary["title"],
+      description: resultSummary["description"],
+      imagePath: resultSummary["image_path"],
+      imageUrl: image,
+      ingredients: resultContent["ingredients"].cast<String>(),
+      instructions: resultContent["instructions"].cast<String>(),
+      webUrl: resultweb,
+      ytUrl: resultYt,
+    );
 
     return item;
   }
