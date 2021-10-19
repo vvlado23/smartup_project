@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smartup_project/providers/menus.dart';
-import 'package:smartup_project/screens/home_page_screen.dart';
+import 'package:smartup_project/screens/menu_page_screen.dart';
 
 class MenuButtonsColumn extends StatefulWidget {
   const MenuButtonsColumn({Key? key}) : super(key: key);
@@ -47,7 +47,7 @@ class _MenuButtonsColumnState extends State<MenuButtonsColumn> {
                   (_) => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePageScreen(
+                      builder: (context) => MenuPageScreen(
                         menuNum: (i + 1),
                         menuPath: menuPaths[i],
                       ),

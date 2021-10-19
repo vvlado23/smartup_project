@@ -42,8 +42,11 @@ class _FoodListViewWidgetState extends State<FoodListViewWidget> {
       child: Column(
         children: [
           widget.item.imageUrl != null
-              ? Image.network(
-                  widget.item.imageUrl!,
+              ? Hero(
+                  tag: widget.item.itemKey,
+                  child: Image.network(
+                    widget.item.imageUrl!,
+                  ),
                 )
               : Container(),
           ExpandablePanel(
@@ -61,7 +64,7 @@ class _FoodListViewWidgetState extends State<FoodListViewWidget> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    widget.item.description ?? " ",
+                    widget.item.description ?? ' ',
                     textScaleFactor: 1.1,
                   ),
                 ),

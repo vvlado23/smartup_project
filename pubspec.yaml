@@ -38,6 +38,7 @@ dependencies:
   firebase_storage: ^10.0.5
 
   expandable: ^5.0.1
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:

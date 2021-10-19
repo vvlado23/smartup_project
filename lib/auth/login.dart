@@ -6,8 +6,8 @@ final auth = FirebaseAuth.instance;
 
 class Login {
   static bool isLoggedIn = false;
-  final mail;
-  final pass;
+  final mail; //candidate@smartupweb.com
+  final pass; //smartup
 
   Login({required this.mail, required this.pass});
   Login.out({this.mail = " ", this.pass = " "});

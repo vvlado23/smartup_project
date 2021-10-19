@@ -3,14 +3,13 @@ import 'package:provider/provider.dart';
 
 import '../widgets/food_listview_widget.dart';
 
-import '../providers/item.dart';
 import '../providers/menus.dart';
 
-class HomePageScreen extends StatelessWidget {
+class MenuPageScreen extends StatelessWidget {
   final int menuNum;
   final String menuPath;
 
-  const HomePageScreen(
+  const MenuPageScreen(
       {Key? key, required this.menuNum, required this.menuPath})
       : super(key: key);
 

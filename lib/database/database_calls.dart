@@ -65,7 +65,7 @@ class DatabaseCalls {
     var resultContent = await _ref.once().then((value) => value.value);
     //Website URL:
     _ref = database.reference().child('item_external_links/website_urls/$key');
-    var resultweb = await _ref.once().then((value) => value.value);
+    var resultWeb = await _ref.once().then((value) => value.value);
     //YouTube URL:
     _ref = database.reference().child('item_external_links/youtube_urls/$key');
     var resultYt = await _ref.once().then((value) => value.value);
@@ -80,7 +80,7 @@ class DatabaseCalls {
       imageUrl: image,
       ingredients: resultContent["ingredients"].cast<String>(),
       instructions: resultContent["instructions"].cast<String>(),
-      webUrl: resultweb,
+      webUrl: resultWeb,
       ytUrl: resultYt,
     );
 
