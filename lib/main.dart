@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.grey,
-        ),
+            appBarTheme: AppBarTheme(color: Colors.grey.shade600),
+            textTheme:
+                TextTheme(bodyText1: TextStyle(color: Colors.grey.shade600))),
         home: setFirstScreen(context),
       ),
     );

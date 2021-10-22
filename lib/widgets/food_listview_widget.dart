@@ -29,12 +29,12 @@ class _FoodListViewWidgetState extends State<FoodListViewWidget> {
         boxShadow: [
           BoxShadow(
             color: Colors.grey,
-            offset: Offset(2, 2),
+            offset: Offset(1.5, 1.5),
             blurRadius: 0.8,
           ),
           BoxShadow(
             color: Colors.grey,
-            offset: Offset(-2, 2),
+            offset: Offset(-1.5, 1.5),
             blurRadius: 0.8,
           ),
         ],
@@ -68,22 +68,12 @@ class _FoodListViewWidgetState extends State<FoodListViewWidget> {
                     textScaleFactor: 1.1,
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FoodScreen(
-                          index: widget.index,
-                          path: widget.path,
-                        ),
-                      ),
-                    );
-                  },
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.teal),
-                      foregroundColor: MaterialStateProperty.all(Colors.white)),
-                  child: const Text("Φτιάξτε την συνταγή"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    goToFoodScreenButton(context, widget.index, widget.path, 1),
+                    goToFoodScreenButton(context, widget.index, widget.path, 2),
+                  ],
                 )
               ]),
             ),
@@ -92,4 +82,24 @@ class _FoodListViewWidgetState extends State<FoodListViewWidget> {
       ),
     );
   }
+}
+
+Widget goToFoodScreenButton(
+    BuildContext context, int index, String path, int screen) {
+  return ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => screen == 1
+              ? FoodScreen(path: path, index: index)
+              : FoodScreen(path: path, index: index),
+        ),
+      );
+    },
+    style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.teal.shade300),
+        foregroundColor: MaterialStateProperty.all(Colors.white)),
+    child: const Text("Φτιάξτε την συνταγή"),
+  );
 }

@@ -22,16 +22,4 @@ class Item extends ChangeNotifier {
     this.webUrl,
     this.ytUrl,
   });
-
-// Item.def({
-//   this.itemKey = " ",
-//   this.description = " ",
-//   this.title = " ",
-//   this.imagePath = " ",
-//   this.imageUrl = " ",
-//   this.ingredients = const [" "],
-//   this.instructions = const [" "],
-//   this.webUrl = " ",
-//   this.ytUrl = " ",
-// });
 }
